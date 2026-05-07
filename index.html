@@ -57,74 +57,61 @@
   <style>body { box-sizing: border-box; }</style>
  </head>
  <body class="h-full poppins">
-  <div id="app" class="h-full w-full overflow-auto" style="background: linear-gradient(135deg, #4c1d95, #6b21a8, #7e22ce, #581c87);">
-   <!-- Musical Notes Background -->
-   <div class="fixed inset-0 pointer-events-none overflow-hidden">
-    <span class="note absolute text-pink-300 text-3xl" style="top:10%;left:5%;animation-delay:0s;">♪</span> <span class="note-reverse absolute text-purple-200 text-2xl" style="top:20%;right:10%;animation-delay:0.5s;">♫</span> <span class="note absolute text-pink-200 text-4xl" style="top:40%;left:8%;animation-delay:1s;">♩</span> <span class="note-reverse absolute text-purple-300 text-2xl" style="top:60%;right:5%;animation-delay:1.5s;">♪</span> <span class="note absolute text-pink-400 text-3xl" style="top:75%;left:12%;animation-delay:2s;">♫</span> <span class="note-reverse absolute text-purple-200 text-xl" style="top:30%;left:90%;animation-delay:0.8s;">♩</span> <span class="note absolute text-pink-300 text-2xl" style="top:85%;right:15%;animation-delay:2.5s;">♪</span> <span class="note-reverse absolute text-purple-100 text-3xl" style="top:50%;left:3%;animation-delay:1.2s;">♫</span> <span class="note absolute text-pink-200 text-xl" style="top:15%;left:50%;animation-delay:0.3s;">♩</span> <span class="note-reverse absolute text-purple-300 text-2xl" style="top:70%;left:85%;animation-delay:1.8s;">♪</span>
+  <div id="app" class="h-full w-full overflow-auto" style="background: linear-gradient(135deg, #4c1d95, #6b21a8, #7e22ce, #581c87);"><!-- Musical Notes Background -->
+   <div class="fixed inset-0 pointer-events-none overflow-hidden"><span class="note absolute text-pink-300 text-3xl" style="top:10%;left:5%;animation-delay:0s;">♪</span> <span class="note-reverse absolute text-purple-200 text-2xl" style="top:20%;right:10%;animation-delay:0.5s;">♫</span> <span class="note absolute text-pink-200 text-4xl" style="top:40%;left:8%;animation-delay:1s;">♩</span> <span class="note-reverse absolute text-purple-300 text-2xl" style="top:60%;right:5%;animation-delay:1.5s;">♪</span> <span class="note absolute text-pink-400 text-3xl" style="top:75%;left:12%;animation-delay:2s;">♫</span> <span class="note-reverse absolute text-purple-200 text-xl" style="top:30%;left:90%;animation-delay:0.8s;">♩</span> <span class="note absolute text-pink-300 text-2xl" style="top:85%;right:15%;animation-delay:2.5s;">♪</span> <span class="note-reverse absolute text-purple-100 text-3xl" style="top:50%;left:3%;animation-delay:1.2s;">♫</span> <span class="note absolute text-pink-200 text-xl" style="top:15%;left:50%;animation-delay:0.3s;">♩</span> <span class="note-reverse absolute text-purple-300 text-2xl" style="top:70%;left:85%;animation-delay:1.8s;">♪</span>
    </div><!-- Navigation -->
    <nav class="fixed top-0 left-0 right-0 z-20 bg-purple-950/80 backdrop-blur-md border-b border-pink-500/30">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4 flex-wrap">
      <h1 class="playfair text-2xl font-bold text-white flex-shrink-0">Levi &amp; Rebecca</h1>
-     <div class="flex gap-2 flex-wrap justify-center sm:justify-end"><button onclick="showPage('home')" class="nav-btn active px-4 py-2 rounded-full text-white text-sm font-semibold border border-pink-400/50 hover:border-pink-300 transition-all"><i data-lucide="heart" style="width:16px;height:16px;" class="inline mr-2"></i>Início</button> <button onclick="showPage('memories')" class="nav-btn px-4 py-2 rounded-full text-purple-200 text-sm font-semibold border border-pink-400/30 hover:border-pink-300 hover:text-white transition-all"><i data-lucide="image" style="width:16px;height:16px;" class="inline mr-2"></i>Memórias</button> <button onclick="showPage('dates')" class="nav-btn px-4 py-2 rounded-full text-purple-200 text-sm font-semibold border border-pink-400/30 hover:border-pink-300 hover:text-white transition-all"><i data-lucide="calendar" style="width:16px;height:16px;" class="inline mr-2"></i>Datas</button> <button onclick="showPage('prayers')" class="nav-btn px-4 py-2 rounded-full text-purple-200 text-sm font-semibold border border-pink-400/30 hover:border-pink-300 hover:text-white transition-all"><i data-lucide="sparkles" style="width:16px;height:16px;" class="inline mr-2"></i>Orações</button> <button onclick="showPage('feelings')" class="nav-btn px-4 py-2 rounded-full text-purple-200 text-sm font-semibold border border-pink-400/30 hover:border-pink-300 hover:text-white transition-all"><i data-lucide="book-open" style="width:16px;height:16px;" class="inline mr-2"></i>Sentimentos</button>
+     <div class="flex gap-2 flex-wrap justify-center sm:justify-end">
+      <button onclick="showPage('home')" class="nav-btn active px-4 py-2 rounded-full text-white text-sm font-semibold border border-pink-400/50 hover:border-pink-300 transition-all"><i data-lucide="heart" style="width:16px;height:16px;" class="inline mr-2"></i>Início</button> <button onclick="showPage('memories')" class="nav-btn px-4 py-2 rounded-full text-purple-200 text-sm font-semibold border border-pink-400/30 hover:border-pink-300 hover:text-white transition-all"><i data-lucide="image" style="width:16px;height:16px;" class="inline mr-2"></i>Memórias</button> <button onclick="showPage('dates')" class="nav-btn px-4 py-2 rounded-full text-purple-200 text-sm font-semibold border border-pink-400/30 hover:border-pink-300 hover:text-white transition-all"><i data-lucide="calendar" style="width:16px;height:16px;" class="inline mr-2"></i>Datas</button> <button onclick="showPage('prayers')" class="nav-btn px-4 py-2 rounded-full text-purple-200 text-sm font-semibold border border-pink-400/30 hover:border-pink-300 hover:text-white transition-all"><i data-lucide="sparkles" style="width:16px;height:16px;" class="inline mr-2"></i>Orações</button> <button onclick="showPage('feelings')" class="nav-btn px-4 py-2 rounded-full text-purple-200 text-sm font-semibold border border-pink-400/30 hover:border-pink-300 hover:text-white transition-all"><i data-lucide="book-open" style="width:16px;height:16px;" class="inline mr-2"></i>Sentimentos</button>
      </div>
     </div>
    </nav><!-- Content Area -->
-   <div class="relative z-10 max-w-5xl mx-auto px-4 py-20 pt-24">
-    <!-- HOME PAGE -->
-    <div id="home" class="page active">
-     <!-- Header -->
+   <div class="relative z-10 max-w-5xl mx-auto px-4 py-20 pt-24"><!-- HOME PAGE -->
+    <div id="home" class="page active"><!-- Header -->
      <header class="text-center mb-12 fade-in-up">
-      <div class="inline-block relative mb-6">
-       <span class="sparkle absolute -top-4 -left-4 text-yellow-300 text-xl" style="animation-delay:0s;">✦</span> <span class="sparkle absolute -top-2 -right-6 text-pink-300 text-lg" style="animation-delay:0.7s;">✦</span> <span class="sparkle absolute -bottom-3 left-1/2 text-yellow-200 text-sm" style="animation-delay:1.4s;">✦</span>
+      <div class="inline-block relative mb-6"><span class="sparkle absolute -top-4 -left-4 text-yellow-300 text-xl" style="animation-delay:0s;">✦</span> <span class="sparkle absolute -top-2 -right-6 text-pink-300 text-lg" style="animation-delay:0.7s;">✦</span> <span class="sparkle absolute -bottom-3 left-1/2 text-yellow-200 text-sm" style="animation-delay:1.4s;">✦</span>
        <h1 id="mainTitle" class="playfair text-6xl md:text-7xl font-bold text-white drop-shadow-lg">Levi e Rebecca</h1>
       </div>
       <p class="playfair text-2xl md:text-3xl text-pink-200 mb-2">— 2 anos —</p>
       <p id="subtitle" class="text-purple-100 text-lg poppins">Uma história escrita por Deus...</p>
-      <div class="mt-4 flex items-center justify-center gap-3 text-pink-300">
-       <span class="text-xl bounce-soft">♥</span> <span class="text-base">Orando e esperando juntos</span> <span class="text-xl bounce-soft" style="animation-delay: 0.5s;">♥</span>
+      <div class="mt-4 flex items-center justify-center gap-3 text-pink-300"><span class="text-xl bounce-soft">♥</span> <span class="text-base">Orando e esperando juntos</span> <span class="text-xl bounce-soft" style="animation-delay: 0.5s;">♥</span>
       </div>
      </header><!-- Photo Section -->
      <section class="mb-12 fade-in-up stagger-1">
       <div id="photoFrame" class="photo-frame mx-auto w-72 h-72 md:w-96 md:h-96 rounded-full border-4 border-pink-400 bg-purple-900/50 flex items-center justify-center cursor-pointer overflow-hidden relative glow-pulse" onclick="document.getElementById('photoInput').click()">
-       <div id="photoPlaceholder" class="text-center p-6">
-        <i data-lucide="camera" class="mx-auto text-pink-300 mb-3" style="width:56px;height:56px;"></i>
+       <div id="photoPlaceholder" class="text-center p-6"><i data-lucide="camera" class="mx-auto text-pink-300 mb-3" style="width:56px;height:56px;"></i>
         <p class="text-purple-200 text-base">Clique para adicionar a foto do casal</p>
        </div><img id="photoPreview" class="absolute inset-0 w-full h-full object-cover hidden" alt="Foto do casal">
       </div><input type="file" id="photoInput" accept="image/*" class="hidden" onchange="handlePhoto(event)">
      </section><!-- Dual Stories Section -->
      <section class="mb-12 fade-in-up stagger-2">
       <h2 class="playfair text-4xl md:text-5xl text-center text-pink-200 mb-12">Vocês Juntos</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-       <!-- Levi's Story -->
+      <div class="grid md:grid-cols-2 gap-8"><!-- Levi's Story -->
        <div class="group">
         <div class="bg-blue-500/15 border-2 border-blue-400/60 rounded-3xl p-8 backdrop-blur-sm hover:border-blue-300/100 hover:bg-blue-500/20 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/20">
          <div class="flex items-center gap-4 mb-6">
-          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-400/40 to-blue-600/40 border-2 border-blue-300 flex items-center justify-center bounce-soft">
-           <i data-lucide="heart" class="text-blue-200" style="width:28px;height:28px;"></i>
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-400/40 to-blue-600/40 border-2 border-blue-300 flex items-center justify-center bounce-soft"><i data-lucide="heart" class="text-blue-200" style="width:28px;height:28px;"></i>
           </div>
-          <div>
-           <span id="leviName" class="playfair text-2xl font-bold text-blue-100">Levi</span>
+          <div><span id="leviName" class="playfair text-2xl font-bold text-blue-100">Levi</span>
            <p class="text-blue-300/70 text-xs">Seu coração</p>
           </div>
          </div><textarea id="leviStory" class="w-full bg-transparent text-blue-50 placeholder-blue-300/50 resize-none outline-none text-sm leading-relaxed poppins focus:text-blue-100" rows="7" placeholder="Levi, escreva aqui seus sentimentos, memórias especiais e suas orações... 💙" onchange="saveFeeling('levi')"></textarea>
-         <div class="mt-4 text-xs text-blue-300/60 flex items-center gap-1">
-          <i data-lucide="edit-3" style="width:14px;height:14px;"></i> Compartilhe seu coração...
+         <div class="mt-4 text-xs text-blue-300/60 flex items-center gap-1"><i data-lucide="edit-3" style="width:14px;height:14px;"></i> Compartilhe seu coração...
          </div>
         </div>
        </div><!-- Rebecca's Story -->
        <div class="group">
         <div class="bg-pink-500/15 border-2 border-pink-400/60 rounded-3xl p-8 backdrop-blur-sm hover:border-pink-300/100 hover:bg-pink-500/20 transition-all duration-300 hover:shadow-lg hover:shadow-pink-500/20">
          <div class="flex items-center gap-4 mb-6">
-          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-pink-400/40 to-pink-600/40 border-2 border-pink-300 flex items-center justify-center bounce-soft">
-           <i data-lucide="heart" class="text-pink-200" style="width:28px;height:28px;"></i>
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-pink-400/40 to-pink-600/40 border-2 border-pink-300 flex items-center justify-center bounce-soft"><i data-lucide="heart" class="text-pink-200" style="width:28px;height:28px;"></i>
           </div>
-          <div>
-           <span id="rebeccaName" class="playfair text-2xl font-bold text-pink-100">Rebecca</span>
+          <div><span id="rebeccaName" class="playfair text-2xl font-bold text-pink-100">Rebecca</span>
            <p class="text-pink-300/70 text-xs">Seu coração</p>
           </div>
          </div><textarea id="rebeccaStory" class="w-full bg-transparent text-pink-50 placeholder-pink-300/50 resize-none outline-none text-sm leading-relaxed poppins focus:text-pink-100" rows="7" placeholder="Rebecca, escreva aqui seus sentimentos, memórias especiais e suas orações... 💗" onchange="saveFeeling('rebecca')"></textarea>
-         <div class="mt-4 text-xs text-pink-300/60 flex items-center gap-1">
-          <i data-lucide="edit-3" style="width:14px;height:14px;"></i> Compartilhe seu coração...
+         <div class="mt-4 text-xs text-pink-300/60 flex items-center gap-1"><i data-lucide="edit-3" style="width:14px;height:14px;"></i> Compartilhe seu coração...
          </div>
         </div>
        </div>
@@ -133,11 +120,9 @@
      <section class="mb-12 fade-in-up stagger-1">
       <h2 class="playfair text-4xl md:text-5xl text-center text-pink-200 mb-8">Nossa Oração</h2>
       <div class="bg-white/10 backdrop-blur-sm border-2 border-pink-400/40 rounded-3xl p-8 hover:border-pink-300/60 hover:bg-white/15 transition-all">
-       <div class="flex items-center gap-4 mb-6">
-        <i data-lucide="sparkles" class="text-pink-300" style="width:32px;height:32px;"></i> <span class="playfair text-2xl text-pink-100">Orando Juntos</span>
+       <div class="flex items-center gap-4 mb-6"><i data-lucide="sparkles" class="text-pink-300" style="width:32px;height:32px;"></i> <span class="playfair text-2xl text-pink-100">Orando Juntos</span>
        </div><textarea id="jointPrayer" class="w-full bg-transparent text-purple-50 placeholder-purple-300/40 resize-none outline-none text-base leading-relaxed poppins focus:text-white" rows="6" placeholder="Aqui vocês escrevem a oração que fazem um pelo outro..." onchange="savePrayer()"></textarea>
-       <div class="mt-8 flex gap-4 justify-center">
-        <button onclick="saveMoments()" class="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-8 py-3 rounded-full font-bold transition-all hover:scale-105 shadow-lg shadow-pink-500/40 flex items-center gap-2 poppins"> <i data-lucide="save" style="width:20px;height:20px;"></i> Guardar Oração </button> <button onclick="sendHearts()" class="bg-gradient-to-r from-red-500 via-pink-500 to-rose-500 hover:from-red-600 hover:via-pink-600 hover:to-rose-600 text-white px-8 py-3 rounded-full font-bold transition-all hover:scale-105 shadow-lg shadow-pink-500/40 flex items-center gap-2 poppins"> <i data-lucide="heart" style="width:20px;height:20px;"></i> Enviar Amor </button>
+       <div class="mt-8 flex gap-4 justify-center"><button onclick="saveMoments()" class="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white px-8 py-3 rounded-full font-bold transition-all hover:scale-105 shadow-lg shadow-pink-500/40 flex items-center gap-2 poppins"> <i data-lucide="save" style="width:20px;height:20px;"></i> Guardar Oração </button> <button onclick="sendHearts()" class="bg-gradient-to-r from-red-500 via-pink-500 to-rose-500 hover:from-red-600 hover:via-pink-600 hover:to-rose-600 text-white px-8 py-3 rounded-full font-bold transition-all hover:scale-105 shadow-lg shadow-pink-500/40 flex items-center gap-2 poppins"> <i data-lucide="heart" style="width:20px;height:20px;"></i> Enviar Amor </button>
        </div>
       </div>
      </section>
@@ -150,17 +135,13 @@
     <div id="memories" class="page">
      <h1 class="playfair text-5xl md:text-6xl text-center text-pink-200 mb-12 fade-in-up">📸 Nossas Memórias</h1>
      <div class="bg-white/10 backdrop-blur-sm border-2 border-pink-400/40 rounded-3xl p-8 mb-12 fade-in-up">
-      <div class="flex items-center gap-4 mb-6">
-       <i data-lucide="plus-circle" class="text-pink-300" style="width:32px;height:32px;"></i> <span class="playfair text-2xl text-pink-100">Adicionar Memória</span>
+      <div class="flex items-center gap-4 mb-6"><i data-lucide="plus-circle" class="text-pink-300" style="width:32px;height:32px;"></i> <span class="playfair text-2xl text-pink-100">Adicionar Memória</span>
       </div>
       <div class="space-y-4">
-       <div>
-        <label class="text-purple-200 text-sm font-semibold mb-2 block">Descrição</label> <textarea id="memoryDesc" class="w-full bg-purple-900/30 text-purple-50 placeholder-purple-300/40 border border-pink-400/40 rounded-xl p-4 resize-none outline-none focus:border-pink-300 focus:bg-purple-900/50" rows="3" placeholder="Descreva essa memória especial..."></textarea>
+       <div><label class="text-purple-200 text-sm font-semibold mb-2 block">Descrição</label> <textarea id="memoryDesc" class="w-full bg-purple-900/30 text-purple-50 placeholder-purple-300/40 border border-pink-400/40 rounded-xl p-4 resize-none outline-none focus:border-pink-300 focus:bg-purple-900/50" rows="3" placeholder="Descreva essa memória especial..."></textarea>
        </div>
-       <div>
-        <label class="text-purple-200 text-sm font-semibold mb-2 block">Adicionar Foto</label>
-        <div class="border-2 border-dashed border-pink-400/40 rounded-xl p-6 text-center cursor-pointer hover:border-pink-300 hover:bg-pink-500/10 transition-all" onclick="document.getElementById('memoryInput').click()">
-         <i data-lucide="image" class="mx-auto text-pink-300 mb-2" style="width:40px;height:40px;"></i>
+       <div><label class="text-purple-200 text-sm font-semibold mb-2 block">Adicionar Foto</label>
+        <div class="border-2 border-dashed border-pink-400/40 rounded-xl p-6 text-center cursor-pointer hover:border-pink-300 hover:bg-pink-500/10 transition-all" onclick="document.getElementById('memoryInput').click()"><i data-lucide="image" class="mx-auto text-pink-300 mb-2" style="width:40px;height:40px;"></i>
          <p class="text-purple-200">Clique para adicionar foto</p>
         </div><input type="file" id="memoryInput" accept="image/*" class="hidden" onchange="previewMemory(event)"> <img id="memoryPreview" class="mt-4 rounded-xl max-h-64 mx-auto hidden" alt="Preview">
        </div><button onclick="addMemory()" class="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white py-3 rounded-full font-bold transition-all hover:scale-105 shadow-lg shadow-pink-500/40 flex items-center justify-center gap-2 poppins"> <i data-lucide="save" style="width:20px;height:20px;"></i> Guardar Memória </button>
@@ -172,20 +153,16 @@
      </footer>
     </div><!-- DATES PAGE -->
     <div id="dates" class="page">
-     <h1 class="playfair text-5xl md:text-6xl text-center text-pink-200 mb-12 fade-in-up">📅 Nossos Dates</h1>
+     <h1 class="playfair text-5xl md:text-6xl text-center text-pink-200 mb-12 fade-in-up">📅 Datas Especiais</h1>
      <div class="bg-white/10 backdrop-blur-sm border-2 border-pink-400/40 rounded-3xl p-8 mb-12 fade-in-up">
-      <div class="flex items-center gap-4 mb-6">
-       <i data-lucide="calendar" class="text-pink-300" style="width:32px;height:32px;"></i> <span class="playfair text-2xl text-pink-100">Agendar Data Especial</span>
+      <div class="flex items-center gap-4 mb-6"><i data-lucide="calendar" class="text-pink-300" style="width:32px;height:32px;"></i> <span class="playfair text-2xl text-pink-100">Agendar Data Especial</span>
       </div>
       <div class="space-y-4">
-       <div>
-        <label class="text-purple-200 text-sm font-semibold mb-2 block">Nome do Date</label> <input type="text" id="dateTitle" class="w-full bg-purple-900/30 text-purple-50 placeholder-purple-300/40 border border-pink-400/40 rounded-xl p-3 outline-none focus:border-pink-300 focus:bg-purple-900/50" placeholder="ex: Nosso Primeiro Encontro">
+       <div><label class="text-purple-200 text-sm font-semibold mb-2 block">Nome da Data</label> <input type="text" id="dateTitle" class="w-full bg-purple-900/30 text-purple-50 placeholder-purple-300/40 border border-pink-400/40 rounded-xl p-3 outline-none focus:border-pink-300 focus:bg-purple-900/50" placeholder="ex: Nosso Primeiro Encontro">
        </div>
-       <div>
-        <label class="text-purple-200 text-sm font-semibold mb-2 block">Data</label> <input type="date" id="dateInput" class="w-full bg-purple-900/30 text-purple-50 border border-pink-400/40 rounded-xl p-3 outline-none focus:border-pink-300">
+       <div><label class="text-purple-200 text-sm font-semibold mb-2 block">Data</label> <input type="date" id="dateInput" class="w-full bg-purple-900/30 text-purple-50 border border-pink-400/40 rounded-xl p-3 outline-none focus:border-pink-300">
        </div>
-       <div>
-        <label class="text-purple-200 text-sm font-semibold mb-2 block">Descrição</label> <textarea id="dateDesc" class="w-full bg-purple-900/30 text-purple-50 placeholder-purple-300/40 border border-pink-400/40 rounded-xl p-4 resize-none outline-none focus:border-pink-300 focus:bg-purple-900/50" rows="3" placeholder="O que vocês planejam fazer?"></textarea>
+       <div><label class="text-purple-200 text-sm font-semibold mb-2 block">Descrição</label> <textarea id="dateDesc" class="w-full bg-purple-900/30 text-purple-50 placeholder-purple-300/40 border border-pink-400/40 rounded-xl p-4 resize-none outline-none focus:border-pink-300 focus:bg-purple-900/50" rows="3" placeholder="O que vocês planejam fazer?"></textarea>
        </div><button onclick="addDate()" class="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white py-3 rounded-full font-bold transition-all hover:scale-105 shadow-lg shadow-pink-500/40 flex items-center justify-center gap-2 poppins"> <i data-lucide="save" style="width:20px;height:20px;"></i> Guardar Data </button>
       </div>
      </div>
@@ -212,6 +189,7 @@
   </div>
   <script>
     let allData = [];
+    let selectedPrayerPerson = 'levi';
 
     // Initialize Data SDK
     const dataHandler = {
@@ -265,7 +243,7 @@
       const img = document.getElementById('memoryPreview').src;
       
       if (!desc) {
-        alert('Por favor descreva a memória');
+        showNotification('Por favor descreva a memória 💭');
         return;
       }
 
@@ -275,6 +253,7 @@
         description: desc,
         content: img || '',
         date: new Date().toISOString(),
+        timestamp: new Date().toISOString(),
         person: 'casal'
       });
 
@@ -282,6 +261,7 @@
         document.getElementById('memoryDesc').value = '';
         document.getElementById('memoryPreview').classList.add('hidden');
         document.getElementById('memoryInput').value = '';
+        showNotification('Memória guardada com amor! 📸💜');
       }
     }
 
@@ -292,7 +272,7 @@
       const desc = document.getElementById('dateDesc').value;
 
       if (!title || !date) {
-        alert('Preencha o nome e data');
+        showNotification('Preencha o nome e data 📅');
         return;
       }
 
@@ -302,6 +282,7 @@
         date: date,
         description: title,
         content: desc,
+        timestamp: new Date().toISOString(),
         person: 'casal'
       });
 
@@ -309,40 +290,60 @@
         document.getElementById('dateTitle').value = '';
         document.getElementById('dateInput').value = '';
         document.getElementById('dateDesc').value = '';
+        showNotification('Data especial agendada! 💕');
       }
     }
 
-    // Prayers
-    async function savePrayer() {
-      const prayer = document.getElementById('jointPrayer').value;
-      if (!prayer) return;
-
-      const existing = allData.find(d => d.type === 'prayer');
+    // Prayer selection
+    function selectPrayerPerson(person) {
+      selectedPrayerPerson = person;
+      document.getElementById('leviPrayerBtn').classList.remove('bg-blue-500/20');
+      document.getElementById('rebeccaPrayerBtn').classList.remove('bg-pink-500/20');
       
-      if (existing) {
-        existing.content = prayer;
-        existing.date = new Date().toISOString();
-        await window.dataSdk.update(existing);
+      if (person === 'levi') {
+        document.getElementById('leviPrayerBtn').classList.add('bg-blue-500/20');
       } else {
-        await window.dataSdk.create({
-          id: 'prayer_' + Date.now(),
-          type: 'prayer',
-          content: prayer,
-          date: new Date().toISOString(),
-          person: 'casal'
-        });
+        document.getElementById('rebeccaPrayerBtn').classList.add('bg-pink-500/20');
       }
     }
 
-    // Feelings
+    // Add Prayer
+    async function addPrayer() {
+      const text = document.getElementById('prayerText').value;
+      
+      if (!text.trim()) {
+        showNotification('Escreva uma oração para compartilhar 🙏');
+        return;
+      }
+
+      const result = await window.dataSdk.create({
+        id: 'prayer_' + Date.now(),
+        type: 'prayer',
+        content: text,
+        person: selectedPrayerPerson,
+        date: new Date().toISOString(),
+        timestamp: new Date().toISOString(),
+        description: ''
+      });
+
+      if (result.isOk) {
+        document.getElementById('prayerText').value = '';
+        showNotification('Oração enviada com amor! ✨💜');
+        selectPrayerPerson('levi');
+      }
+    }
+
+    // Feelings - from home page
     async function saveFeeling(person) {
       const content = document.getElementById(person + 'Story').value;
+      
+      if (!content.trim()) return;
       
       const existing = allData.find(d => d.type === 'feeling' && d.person === person);
       
       if (existing) {
         existing.content = content;
-        existing.date = new Date().toISOString();
+        existing.timestamp = new Date().toISOString();
         await window.dataSdk.update(existing);
       } else {
         await window.dataSdk.create({
@@ -350,14 +351,18 @@
           type: 'feeling',
           content: content,
           date: new Date().toISOString(),
-          person: person
+          timestamp: new Date().toISOString(),
+          person: person,
+          description: ''
         });
       }
+      showNotification('Sentimento guardado! 💕');
     }
 
     // Render all pages
     function renderAllPages() {
       renderMemories();
+      renderDatesCalendar();
       renderDates();
       renderPrayers();
       renderFeelings();
@@ -371,12 +376,45 @@
         <div class="bg-white/10 backdrop-blur-sm border-2 border-pink-400/40 rounded-3xl p-6 hover:border-pink-300 transition-all fade-in-up">
           ${m.content ? `<img src="${m.content}" alt="Memória" class="rounded-xl w-full h-48 object-cover mb-4">` : ''}
           <p class="text-pink-100 mb-3">${m.description}</p>
-          <p class="text-purple-300/60 text-xs">${new Date(m.date).toLocaleDateString('pt-BR')}</p>
+          <p class="text-purple-300/60 text-xs">📅 ${new Date(m.date).toLocaleDateString('pt-BR')}</p>
           <button onclick="deleteItem('${m.__backendId}')" class="mt-4 text-pink-300 hover:text-pink-100 text-sm flex items-center gap-1">
             <i data-lucide="trash-2" style="width:16px;height:16px;"></i> Deletar
           </button>
         </div>
       `).join('');
+      lucide.createIcons();
+    }
+
+    function renderDatesCalendar() {
+      const container = document.getElementById('datesCalendar');
+      const dates = allData.filter(d => d.type === 'date').sort((a, b) => new Date(a.date) - new Date(b.date));
+      
+      if (dates.length === 0) {
+        container.innerHTML = '<p class="text-center text-purple-300/60">Ainda não há datas agendadas 📅</p>';
+        return;
+      }
+      
+      const calendarHTML = dates.map(d => {
+        const dateObj = new Date(d.date);
+        const day = dateObj.toLocaleDateString('pt-BR', { weekday: 'long' });
+        const formatted = dateObj.toLocaleDateString('pt-BR');
+        
+        return `
+          <div class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 border-2 border-pink-400/50 rounded-2xl p-4 flex items-center gap-4 hover:border-pink-300 transition-all">
+            <div class="bg-pink-500/40 rounded-xl p-3 min-w-fit">
+              <p class="text-pink-200 font-bold text-lg">${dateObj.getDate()}</p>
+              <p class="text-pink-300/70 text-xs uppercase">${dateObj.toLocaleDateString('pt-BR', { month: 'short' })}</p>
+            </div>
+            <div class="flex-1">
+              <h4 class="playfair text-lg text-pink-100 font-bold">${d.description}</h4>
+              <p class="text-purple-200 text-sm capitalize">${day}</p>
+            </div>
+            <i data-lucide="heart" class="text-pink-400" style="width:24px;height:24px;"></i>
+          </div>
+        `;
+      }).join('');
+      
+      container.innerHTML = `<div class="space-y-3">${calendarHTML}</div>`;
       lucide.createIcons();
     }
 
@@ -403,43 +441,66 @@
 
     function renderPrayers() {
       const container = document.getElementById('prayersList');
-      const prayers = allData.filter(d => d.type === 'prayer');
+      const prayers = allData.filter(d => d.type === 'prayer').sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
       
-      container.innerHTML = prayers.map(p => `
-        <div class="bg-white/10 backdrop-blur-sm border-2 border-pink-400/40 rounded-3xl p-8 hover:border-pink-300 transition-all fade-in-up">
-          <div class="flex items-center gap-3 mb-6">
-            <i data-lucide="sparkles" class="text-pink-300" style="width:28px;height:28px;"></i>
-            <span class="playfair text-2xl text-pink-100">Nossa Oração</span>
+      if (prayers.length === 0) {
+        container.innerHTML = '<p class="text-center text-purple-300/60 py-8">Ainda não há orações 🙏</p>';
+        return;
+      }
+      
+      container.innerHTML = prayers.map(p => {
+        const isLevi = p.person === 'levi';
+        const colors = isLevi 
+          ? { bg: 'from-blue-500/20 to-blue-600/10', border: 'border-blue-400/60', text: 'text-blue-100', subtext: 'text-blue-300/70', icon: 'text-blue-300' }
+          : { bg: 'from-pink-500/20 to-pink-600/10', border: 'border-pink-400/60', text: 'text-pink-100', subtext: 'text-pink-300/70', icon: 'text-pink-300' };
+        
+        return `
+          <div class="bg-gradient-to-br ${colors.bg} backdrop-blur-sm border-2 ${colors.border} rounded-3xl p-8 hover:opacity-90 transition-all fade-in-up relative overflow-hidden">
+            <div class="absolute top-0 right-0 opacity-10 text-6xl">✨</div>
+            <div class="flex items-center gap-4 mb-6 relative z-10">
+              <div class="w-14 h-14 rounded-full bg-white/10 border-2 ${isLevi ? 'border-blue-400' : 'border-pink-400'} flex items-center justify-center">
+                <i data-lucide="heart" class="${colors.icon}" style="width:28px;height:28px;"></i>
+              </div>
+              <div>
+                <span class="playfair text-2xl font-bold ${colors.text}">${isLevi ? '💙 Oração de Levi' : '💗 Oração de Rebecca'}</span>
+              </div>
+            </div>
+            <p class="${colors.text} leading-relaxed mb-4 italic">"${p.content}"</p>
+            <p class="${colors.subtext} text-sm">📝 ${new Date(p.date).toLocaleDateString('pt-BR')} às ${new Date(p.date).toLocaleTimeString('pt-BR', {hour: '2-digit', minute: '2-digit'})}</p>
+            <button onclick="deleteItem('${p.__backendId}')" class="${isLevi ? 'text-blue-300 hover:text-blue-100' : 'text-pink-300 hover:text-pink-100'} text-sm flex items-center gap-1 mt-4">
+              <i data-lucide="trash-2" style="width:16px;height:16px;"></i> Deletar
+            </button>
           </div>
-          <p class="text-purple-50 leading-relaxed mb-4">${p.content}</p>
-          <p class="text-purple-300/60 text-sm mb-4">✝️ Guardada em: ${new Date(p.date).toLocaleDateString('pt-BR')}</p>
-          <button onclick="deleteItem('${p.__backendId}')" class="text-pink-300 hover:text-pink-100 text-sm flex items-center gap-1">
-            <i data-lucide="trash-2" style="width:16px;height:16px;"></i> Deletar
-          </button>
-        </div>
-      `).join('');
+        `;
+      }).join('');
       lucide.createIcons();
     }
 
     function renderFeelings() {
       const container = document.getElementById('feelingsList');
-      const feelings = allData.filter(d => d.type === 'feeling');
+      const feelings = allData.filter(d => d.type === 'feeling').sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+      
+      if (feelings.length === 0) {
+        container.innerHTML = '<p class="text-center text-purple-300/60 py-12 col-span-full">Ainda não há sentimentos compartilhados 💭</p>';
+        return;
+      }
       
       container.innerHTML = feelings.map(f => {
         const isLevi = f.person === 'levi';
         return `
-          <div class="${isLevi ? 'bg-blue-500/15 border-blue-400/60' : 'bg-pink-500/15 border-pink-400/60'} backdrop-blur-sm border-2 rounded-3xl p-8 hover:border-${isLevi ? 'blue' : 'pink'}-300 transition-all fade-in-up">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="w-12 h-12 rounded-full bg-gradient-to-br ${isLevi ? 'from-blue-400/40 to-blue-600/40' : 'from-pink-400/40 to-pink-600/40'} border-2 ${isLevi ? 'border-blue-300' : 'border-pink-300'} flex items-center justify-center">
-                <i data-lucide="heart" class="${isLevi ? 'text-blue-200' : 'text-pink-200'}" style="width:24px;height:24px;"></i>
+          <div class="${isLevi ? 'bg-blue-500/15 border-blue-400/60' : 'bg-pink-500/15 border-pink-400/60'} backdrop-blur-sm border-2 rounded-3xl p-8 hover:border-${isLevi ? 'blue' : 'pink'}-300 transition-all fade-in-up relative overflow-hidden">
+            <div class="absolute top-0 right-0 opacity-5 text-8xl">${isLevi ? '💙' : '💗'}</div>
+            <div class="flex items-center gap-4 mb-6 relative z-10">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-br ${isLevi ? 'from-blue-400/40 to-blue-600/40' : 'from-pink-400/40 to-pink-600/40'} border-2 ${isLevi ? 'border-blue-300' : 'border-pink-300'} flex items-center justify-center bounce-soft">
+                <i data-lucide="heart" class="${isLevi ? 'text-blue-200' : 'text-pink-200'}" style="width:28px;height:28px;"></i>
               </div>
               <div>
                 <span class="playfair text-xl font-bold ${isLevi ? 'text-blue-100' : 'text-pink-100'}">${isLevi ? 'Levi' : 'Rebecca'}</span>
-                <p class="${isLevi ? 'text-blue-300/70' : 'text-pink-300/70'} text-xs">Seu sentimento</p>
+                <p class="${isLevi ? 'text-blue-300/70' : 'text-pink-300/70'} text-xs">Compartilhou seu coração</p>
               </div>
             </div>
             <p class="${isLevi ? 'text-blue-50' : 'text-pink-50'} leading-relaxed mb-4">${f.content}</p>
-            <p class="${isLevi ? 'text-blue-300/60' : 'text-pink-300/60'} text-xs mb-4">📝 ${new Date(f.date).toLocaleDateString('pt-BR')}</p>
+            <p class="${isLevi ? 'text-blue-300/60' : 'text-pink-300/60'} text-xs mb-4">📝 ${new Date(f.timestamp).toLocaleDateString('pt-BR')}</p>
             <button onclick="deleteItem('${f.__backendId}')" class="${isLevi ? 'text-blue-300 hover:text-blue-100' : 'text-pink-300 hover:text-pink-100'} text-sm flex items-center gap-1">
               <i data-lucide="trash-2" style="width:16px;height:16px;"></i> Deletar
             </button>
@@ -457,7 +518,7 @@
       confirmDelete.className = 'fixed inset-0 bg-black/70 flex items-center justify-center z-50 rounded-xl';
       confirmDelete.innerHTML = `
         <div class="bg-purple-900 border-2 border-pink-400 rounded-2xl p-8 max-w-sm mx-4">
-          <h3 class="playfair text-2xl text-pink-200 mb-4">Tem certeza?</h3>
+          <h3 class="playfair text-2xl text-pink-200 mb-4">Tem certeza? 💔</h3>
           <p class="text-purple-100 mb-6">Esta ação não pode ser desfeita.</p>
           <div class="flex gap-4">
             <button onclick="this.parentElement.parentElement.remove()" class="flex-1 bg-purple-700 hover:bg-purple-800 text-white py-2 rounded-lg">Cancelar</button>
@@ -514,6 +575,21 @@
         }, 50 + i * 60);
         setTimeout(() => heart.remove(), 3200);
       }
+      showNotification('Chuva de amor enviada! 🌹✨');
+    }
+
+    // Show notification
+    function showNotification(message) {
+      const notif = document.createElement('div');
+      notif.className = 'fixed bottom-8 left-1/2 -translate-x-1/2 bg-gradient-to-r from-pink-500 to-purple-500 text-white px-6 py-3 rounded-full shadow-lg fade-in-up z-50';
+      notif.textContent = message;
+      document.body.appendChild(notif);
+      setTimeout(() => {
+        notif.style.opacity = '0';
+        notif.style.transform = 'translateY(20px)';
+        notif.style.transition = 'all 0.3s ease';
+        setTimeout(() => notif.remove(), 300);
+      }, 3000);
     }
 
     // Element SDK
@@ -551,5 +627,5 @@
     init();
     lucide.createIcons();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f80a7c665ad5445',t:'MTc3ODE2MTQyNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f80bb0d26e25445',t:'MTc3ODE2MjIxNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
