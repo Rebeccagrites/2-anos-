@@ -11,8 +11,6 @@
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; width: 100%; }
-
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #121212 0%, #2a0845 100%);
@@ -21,33 +19,16 @@
       overflow-x: hidden;
     }
 
-    .main-wrapper { height: 100%; width: 100%; display: flex; flex-direction: column; overflow-y: auto; }
-
-    /* Estilo Spotify */
     .spotify-card {
       background: #181818;
       border-radius: 12px;
       padding: 1.5rem;
-      transition: background 0.3s ease;
       border: 1px solid rgba(255,255,255,0.1);
     }
-    .spotify-card:hover { background: #282828; }
     
-    .progress-bar {
-      height: 4px;
-      width: 100%;
-      background: #4f4f4f;
-      border-radius: 2px;
-      position: relative;
-    }
-    .progress-fill {
-      height: 100%;
-      width: 35%;
-      background: #1db954;
-      border-radius: 2px;
-    }
+    .progress-bar { height: 4px; width: 100%; background: #4f4f4f; border-radius: 2px; }
+    .progress-fill { height: 100%; width: 45%; background: #1db954; border-radius: 2px; }
 
-    /* Foto Circular com borda animada */
     .profile-circle {
       width: 220px;
       height: 220px;
@@ -55,26 +36,18 @@
       border: 4px solid #9333ea;
       object-fit: cover;
       box-shadow: 0 0 30px rgba(147, 51, 234, 0.5);
-      animation: pulse 3s infinite;
     }
-
-    @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 20px rgba(147, 51, 234, 0.4); }
-      50% { transform: scale(1.02); box-shadow: 0 0 40px rgba(147, 51, 234, 0.7); }
-      100% { transform: scale(1); box-shadow: 0 0 20px rgba(147, 51, 234, 0.4); }
-    }
-
-    h1 { font-family: 'Playfair Display', serif; }
 
     .nav-tab {
       cursor: pointer;
       padding: 0.75rem 1.5rem;
       color: rgba(255, 255, 255, 0.6);
       transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
     }
-    .nav-tab.active { color: #a855f7; border-bottom: 2px solid #a855f7; }
+    .nav-tab.active { color: #a855f7; border-bottom-color: #a855f7; }
 
-    .content-page { display: none; animation: fadeIn 0.6s ease; }
+    .content-page { display: none; animation: fadeIn 0.5s ease forwards; }
     .content-page.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -85,17 +58,27 @@
       padding: 2rem;
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
+    
+    input, textarea {
+      background: rgba(0, 0, 0, 0.3) !important;
+      color: white !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+    input:focus, textarea:focus {
+      border-color: #9333ea !important;
+      outline: none;
+    }
   </style>
  </head>
  <body>
-  <div class="main-wrapper">
+  <div class="main-wrapper flex flex-col min-h-screen">
    
-   <header class="pt-10 pb-6 text-center z-10">
+   <header class="pt-10 pb-6 text-center">
     <h1 id="main-title" class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Levi e Rebecca</h1>
     <p class="text-purple-300 mt-2 text-lg tracking-widest uppercase">2 Anos de História</p>
    </header>
 
-   <nav class="flex justify-center gap-4 mb-8 border-b border-white/10">
+   <nav class="flex justify-center gap-2 mb-8 border-b border-white/10 flex-wrap">
     <button class="nav-tab active" data-page="home">Início</button>
     <button class="nav-tab" data-page="declarations">Declarações</button>
     <button class="nav-tab" data-page="photos">Galeria</button>
@@ -104,68 +87,51 @@
 
    <main class="flex-1 px-6 pb-20">
     
-    <!-- PÁGINA INICIAL (NOVA) -->
+    <!-- PÁGINA INICIAL -->
     <div id="home" class="content-page active max-w-2xl mx-auto">
       <div class="flex flex-col items-center text-center">
-        <!-- Foto Circular -->
         <div class="mb-10 relative">
-          <img id="main-couple-photo" src="https://images.unsplash.com/photo-1516589174184-c68536575962?q=80&w=400&h=400&fit=crop" class="profile-circle" alt="Foto Levi e Rebecca">
-          <div class="absolute -bottom-2 -right-2 bg-purple-600 p-2 rounded-full">
+          <img id="main-couple-photo" src="https://images.unsplash.com/photo-1516589174184-c68536575962?q=80&w=400&h=400&fit=crop" class="profile-circle" alt="Foto">
+          <div class="absolute -bottom-2 -right-2 bg-purple-600 p-2 rounded-full shadow-lg">
             <i data-lucide="heart" class="fill-white text-white w-6 h-6"></i>
           </div>
         </div>
 
-        <!-- Player Estilo Spotify -->
         <div class="spotify-card w-full max-w-md">
-          <div class="flex items-center gap-4 mb-4">
+          <div class="flex items-center gap-4 mb-4 text-left">
             <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-500 rounded shadow-lg flex items-center justify-center">
               <i data-lucide="music" class="text-white w-8 h-8"></i>
             </div>
-            <div class="text-left">
-              <h3 id="main-song-title" class="font-bold text-white text-lg">Nossa Música Principal</h3>
-              <p id="main-song-artist" class="text-gray-400">Levi & Rebecca • 2 Anos</p>
+            <div class="flex-1">
+              <h3 id="main-song-title" class="font-bold text-white text-lg">Nossa Música</h3>
+              <p id="main-song-artist" class="text-gray-400">Levi & Rebecca • Playlist do Casal</p>
             </div>
-            <div class="ml-auto">
-              <i data-lucide="heart" class="text-green-500 fill-green-500 w-5 h-5"></i>
-            </div>
+            <i data-lucide="heart" class="text-green-500 fill-green-500 w-5 h-5"></i>
           </div>
-          
           <div class="space-y-2">
-            <div class="progress-bar">
-              <div class="progress-fill"></div>
-            </div>
-            <div class="flex justify-between text-xs text-gray-400">
-              <span>1:12</span>
-              <span>3:45</span>
-            </div>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+            <div class="flex justify-between text-xs text-gray-400"><span>1:42</span><span>3:30</span></div>
           </div>
-
           <div class="flex justify-center items-center gap-6 mt-4">
-            <i data-lucide="shuffle" class="text-gray-400 w-5 h-5 cursor-pointer hover:text-white"></i>
-            <i data-lucide="skip-back" class="text-white fill-white w-6 h-6 cursor-pointer"></i>
-            <div class="bg-white rounded-full p-3 cursor-pointer hover:scale-105 transition">
-              <i data-lucide="play" class="text-black fill-black w-6 h-6"></i>
-            </div>
-            <i data-lucide="skip-forward" class="text-white fill-white w-6 h-6 cursor-pointer"></i>
-            <i data-lucide="repeat" class="text-gray-400 w-5 h-5 cursor-pointer hover:text-white"></i>
+            <i data-lucide="shuffle" class="text-gray-400 w-5 h-5"></i>
+            <i data-lucide="skip-back" class="text-white fill-white w-6 h-6"></i>
+            <div class="bg-white rounded-full p-3"><i data-lucide="play" class="text-black fill-black w-6 h-6"></i></div>
+            <i data-lucide="skip-forward" class="text-white fill-white w-6 h-6"></i>
+            <i data-lucide="repeat" class="text-gray-400 w-5 h-5"></i>
           </div>
         </div>
-
-        <p id="home-quote" class="mt-10 italic text-gray-300">"De todos os lugares do mundo, o meu favorito é ao seu lado."</p>
       </div>
     </div>
 
     <!-- PÁGINA: DECLARAÇÕES -->
     <div id="declarations" class="content-page max-w-4xl mx-auto">
      <div class="card">
-      <h2 class="text-3xl font-bold mb-6 flex items-center gap-2 text-purple-400">
-        <i data-lucide="message-circle"></i> Nossas Declarações
-      </h2>
+      <h2 class="text-3xl font-bold mb-6 text-purple-400">💌 Mensagens</h2>
       <div class="bg-white/5 p-6 rounded-xl mb-8 border border-white/10">
-       <textarea id="declaration-input" placeholder="Escreva algo lindo..." class="w-full bg-black/20 p-3 border border-white/10 rounded-lg focus:outline-none focus:border-purple-500 text-white" rows="3"></textarea>
-       <div class="flex gap-3 mt-4">
-        <input type="text" id="author-input" placeholder="Seu nome" class="flex-1 bg-black/20 p-2 border border-white/10 rounded-lg text-white">
-        <button id="add-declaration-btn" class="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold transition-all">Enviar 💜</button>
+       <textarea id="decl-content" placeholder="Escreva algo especial..." class="w-full p-3 rounded-lg mb-3" rows="3"></textarea>
+       <div class="flex gap-3">
+        <input type="text" id="decl-author" placeholder="Seu nome" class="flex-1 p-2 rounded-lg">
+        <button onclick="addDeclaration()" class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg font-bold">Enviar</button>
        </div>
       </div>
       <div id="declarations-list" class="space-y-4"></div>
@@ -175,9 +141,11 @@
     <!-- PÁGINA: FOTOS -->
     <div id="photos" class="content-page max-w-4xl mx-auto">
       <div class="card">
-        <h2 class="text-3xl font-bold mb-6 text-purple-400">📸 Galeria de Momentos</h2>
-        <input type="text" id="photo-url-input" placeholder="URL da imagem..." class="w-full bg-black/20 p-3 border border-white/10 rounded-lg text-white mb-4">
-        <button id="add-photo-btn" class="w-full py-3 bg-purple-600 rounded-lg mb-8 font-bold">Adicionar à Galeria</button>
+        <h2 class="text-3xl font-bold mb-6 text-purple-400">📸 Galeria</h2>
+        <div class="flex gap-2 mb-8">
+          <input type="text" id="photo-url" placeholder="Link da foto (https://...)" class="flex-1 p-3 rounded-lg">
+          <button onclick="addPhoto()" class="px-6 py-2 bg-purple-600 rounded-lg font-bold">Adicionar</button>
+        </div>
         <div id="photos-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4"></div>
       </div>
     </div>
@@ -185,7 +153,12 @@
     <!-- PÁGINA: DATES -->
     <div id="dates" class="content-page max-w-4xl mx-auto">
       <div class="card">
-        <h2 class="text-3xl font-bold mb-6 text-purple-400">💕 Nossos Dates</h2>
+        <h2 class="text-3xl font-bold mb-6 text-purple-400">💕 Nossos Momentos</h2>
+        <div class="bg-white/5 p-6 rounded-xl mb-8 border border-white/10">
+          <input type="text" id="date-title" placeholder="Aonde fomos?" class="w-full p-3 rounded-lg mb-3">
+          <textarea id="date-desc" placeholder="O que aconteceu de especial?" class="w-full p-3 rounded-lg mb-3" rows="2"></textarea>
+          <button onclick="addDate()" class="w-full py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-bold">Registrar Date</button>
+        </div>
         <div id="dates-list" class="space-y-4"></div>
       </div>
     </div>
@@ -194,18 +167,18 @@
   </div>
 
   <script>
-    // Gerenciamento de Dados
     let allData = [];
-    const dataHandler = {
-      onDataChanged(data) {
-        allData = data;
-        renderAll();
-      }
-    };
 
-    (async () => {
-      await window.dataSdk.init(dataHandler);
-    })();
+    // Inicialização do SDK
+    async function init() {
+      const result = await window.dataSdk.init({
+        onDataChanged: (data) => {
+          allData = data;
+          renderAll();
+        }
+      });
+    }
+    init();
 
     // Navegação
     document.querySelectorAll('.nav-tab').forEach(tab => {
@@ -217,43 +190,77 @@
       });
     });
 
+    // Funções de Renderização
     function renderAll() {
       renderDeclarations();
       renderPhotos();
       renderDates();
+      lucide.createIcons();
     }
 
     function renderDeclarations() {
-      const list = document.getElementById('declarations-list');
-      list.innerHTML = '';
+      const container = document.getElementById('declarations-list');
+      container.innerHTML = '';
       allData.filter(i => i.type === 'declaration').forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'p-4 bg-white/5 border-l-4 border-purple-500 rounded-r-lg flex justify-between group';
-        div.innerHTML = `
-          <div>
-            <p class="text-gray-200">"${item.content}"</p>
-            <p class="text-purple-400 text-sm mt-2">— ${item.author}</p>
-          </div>
-          <button onclick="deleteItem('${item.__backendId}')" class="opacity-0 group-hover:opacity-100 text-red-400 p-2"><i data-lucide="trash-2"></i></button>
-        `;
-        list.appendChild(div);
+        container.innerHTML += `
+          <div class="p-4 bg-white/5 border-l-4 border-purple-500 rounded-r-lg flex justify-between items-center group">
+            <div><p>"${item.content}"</p><small class="text-purple-400">— ${item.author}</small></div>
+            <button onclick="deleteItem('${item.__backendId}')" class="text-red-400 opacity-0 group-hover:opacity-100 transition"><i data-lucide="trash-2"></i></button>
+          </div>`;
       });
-      lucide.createIcons();
     }
 
     function renderPhotos() {
-      const grid = document.getElementById('photos-grid');
-      grid.innerHTML = '';
+      const container = document.getElementById('photos-grid');
+      container.innerHTML = '';
       allData.filter(i => i.type === 'photo').forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'relative aspect-square overflow-hidden rounded-xl border border-white/10 group';
-        div.innerHTML = `
-          <img src="${item.photoUrl}" class="w-full h-full object-cover">
-          <button onclick="deleteItem('${item.__backendId}')" class="absolute top-2 right-2 bg-black/50 p-2 rounded-full opacity-0 group-hover:opacity-100 transition"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
-        `;
-        grid.appendChild(div);
+        container.innerHTML += `
+          <div class="relative aspect-square rounded-xl overflow-hidden group border border-white/10">
+            <img src="${item.photoUrl}" class="w-full h-full object-cover">
+            <button onclick="deleteItem('${item.__backendId}')" class="absolute top-2 right-2 bg-black/60 p-2 rounded-full opacity-0 group-hover:opacity-100 transition"><i data-lucide="trash-2" class="w-4 h-4 text-red-400"></i></button>
+          </div>`;
       });
-      lucide.createIcons();
+    }
+
+    function renderDates() {
+      const container = document.getElementById('dates-list');
+      container.innerHTML = '';
+      allData.filter(i => i.type === 'date').forEach(item => {
+        container.innerHTML += `
+          <div class="p-5 bg-white/5 rounded-xl border border-white/10 flex justify-between items-start group">
+            <div><h4 class="text-purple-400 font-bold">${item.dateTitle}</h4><p class="text-gray-300 text-sm">${item.dateDescription}</p></div>
+            <button onclick="deleteItem('${item.__backendId}')" class="text-red-400 opacity-0 group-hover:opacity-100 transition"><i data-lucide="trash-2"></i></button>
+          </div>`;
+      });
+    }
+
+    // Ações de Criar
+    async function addDeclaration() {
+      const content = document.getElementById('decl-content').value;
+      const author = document.getElementById('decl-author').value;
+      if(content && author) {
+        await window.dataSdk.create({ type: 'declaration', content, author });
+        document.getElementById('decl-content').value = '';
+        document.getElementById('decl-author').value = '';
+      }
+    }
+
+    async function addPhoto() {
+      const photoUrl = document.getElementById('photo-url').value;
+      if(photoUrl) {
+        await window.dataSdk.create({ type: 'photo', photoUrl });
+        document.getElementById('photo-url').value = '';
+      }
+    }
+
+    async function addDate() {
+      const dateTitle = document.getElementById('date-title').value;
+      const dateDescription = document.getElementById('date-desc').value;
+      if(dateTitle && dateDescription) {
+        await window.dataSdk.create({ type: 'date', dateTitle, dateDescription });
+        document.getElementById('date-title').value = '';
+        document.getElementById('date-desc').value = '';
+      }
     }
 
     async function deleteItem(id) {
@@ -261,39 +268,12 @@
       if(item) await window.dataSdk.delete(item);
     }
 
-    // Handlers de Adição
-    document.getElementById('add-declaration-btn').addEventListener('click', async () => {
-      const content = document.getElementById('declaration-input').value;
-      const author = document.getElementById('author-input').value;
-      if(content && author) {
-        await window.dataSdk.create({ type: 'declaration', content, author });
-        document.getElementById('declaration-input').value = '';
-      }
-    });
-
-    document.getElementById('add-photo-btn').addEventListener('click', async () => {
-      const photoUrl = document.getElementById('photo-url-input').value;
-      if(photoUrl) {
-        await window.dataSdk.create({ type: 'photo', photoUrl });
-        document.getElementById('photo-url-input').value = '';
-      }
-    });
-
-    // Element SDK
-    const defaultConfig = {
-      main_title: "Levi e Rebecca",
-      main_song: "Nossa Música Principal",
-      artist: "Levi & Rebecca",
-      profile_img: "https://images.unsplash.com/photo-1516589174184-c68536575962?q=80&w=400&h=400&fit=crop"
-    };
-
+    // Configuração do Elemento (Editável)
     window.elementSdk?.init({
-      defaultConfig,
       onConfigChange: (config) => {
-        document.getElementById('main-title').textContent = config.main_title;
-        document.getElementById('main-song-title').textContent = config.main_song;
-        document.getElementById('main-song-artist').textContent = config.artist;
-        document.getElementById('main-couple-photo').src = config.profile_img;
+        if(config.main_title) document.getElementById('main-title').textContent = config.main_title;
+        if(config.profile_img) document.getElementById('main-couple-photo').src = config.profile_img;
+        if(config.main_song) document.getElementById('main-song-title').textContent = config.main_song;
       }
     });
 
